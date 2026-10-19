@@ -1,6 +1,6 @@
 # CoachPRO
 
-Рабочая локальная веб-версия для тренеров и подопечных. JavaScript на клиенте и сервере: React + Vite, Express, PostgreSQL. Мобильные приложения отложены. Репозиторий: https://github.com/Iriska7266/CoachPRO. Рабочая ветка веб-версии — `codex/web-mvp`.
+Рабочая локальная веб-версия для тренеров и подопечных. JavaScript на клиенте и сервере: React + Vite, Express, PostgreSQL. Мобильные приложения отложены. Репозиторий: https://github.com/Iriska7266/CoachPRO. Рабочая ветка веб-версии — `ilya`.
 
 ## Открыть на этом компьютере
 
