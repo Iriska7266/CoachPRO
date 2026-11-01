@@ -6,7 +6,7 @@
 
 - Приложение: **http://localhost:3000**.
 - Администрирование БД: **http://127.0.0.1:5050**.
-- Для повторного запуска дважды откройте `Запустить CoachPRO.command`, затем `Открыть pgAdmin.command` в этой папке. Оставьте окна терминала открытыми. Если сервер уже запущен, второй экземпляр не нужен.
+- Для повторного запуска дважды откройте `Запустить CoachPRO.command` и `Открыть pgAdmin.command` в `run/Mac` или соответствующие `.cmd`-файлы в `run/Windows`. Оставьте окна терминала открытыми. Если сервер уже запущен, второй экземпляр не нужен.
 - Остановка: Ctrl+C в соответствующем окне терминала. Данные сохраняются в `.local/`.
 
 Демо-тренер: `coach@coachpro.local`. Демо-подопечный: `trainee@coachpro.local`. Пароль обоих: **CoachPRO2026!**. Все исходные люди и результаты вымышленные. Тренер также имеет собственную связь с другим тренером для проверки двух режимов.
@@ -47,10 +47,19 @@ pnpm dev
 
 Для pgAdmin отдельно требуется Python 3.12+:
 
+macOS:
+
 ```sh
 python3 -m venv .local/pgadmin-venv
 .local/pgadmin-venv/bin/python -m pip install pgadmin4==9.18
 node --env-file=.env scripts/pgadmin.js
+```
+
+Windows (из корня проекта):
+
+```powershell
+py -3.12 -m venv .local\pgadmin-venv
+.\.local\pgadmin-venv\Scripts\python.exe -m pip install pgadmin4==9.18
 ```
 
 На этом компьютере pgAdmin уже установлен. Python используется только инструментом pgAdmin; приложение полностью на JavaScript.

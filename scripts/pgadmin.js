@@ -7,9 +7,17 @@ if (!existsSync(root)) {
   console.error('Сначала установите pgAdmin по README.');
   process.exit(1);
 }
-const py = readdirSync(join(root, 'lib')).find((n) => n.startsWith('python'));
-const packageDir = join(root, 'lib', py, 'site-packages', 'pgadmin4');
-const python = join(root, 'bin', 'python');
+const isWindows = process.platform === 'win32';
+const libDir = isWindows
+  ? join(root, 'Lib', 'site-packages')
+  : join(
+      root,
+      'lib',
+      readdirSync(join(root, 'lib')).find((n) => n.startsWith('python')),
+      'site-packages',
+    );
+const packageDir = join(libDir, 'pgadmin4');
+const python = join(root, isWindows ? 'Scripts/python.exe' : 'bin/python');
 const dataDir = resolve('.local/pgadmin');
 mkdirSync(dataDir, { recursive: true, mode: 0o700 });
 writeFileSync(
