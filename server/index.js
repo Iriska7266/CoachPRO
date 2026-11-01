@@ -67,7 +67,7 @@ export async function createApp() {
 }
 export async function start() {
   const app = await createApp();
-  const server = app.listen(Number(process.env.PORT || 3000), '127.0.0.1', () =>
+  const server = app.listen(Number(process.env.PORT || 3000), '0.0.0.0', () =>
     console.log(`CoachPRO: http://localhost:${process.env.PORT || 3000}`),
   );
   const jobs = setInterval(
